@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Tu Playlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list lines="none">
+    <ion-item *ngFor="let song of playlist; let i = index" class="song-item">
+      <ion-thumbnail slot="start">
+        <img [src]="song.snippet.thumbnails.medium.url" alt="{{ song.snippet.title }}" class="song-thumbnail">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="song-title">{{ song.snippet.title }}</h2>
+        <p class="song-artist">{{ song.snippet.channelTitle }}</p>
+      </ion-label>
+      <ion-button (click)="playSong(i)" fill="clear" class="play-button">
+        <ion-icon name="play" class="play-icon"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <div id="youtube-player" style="display: none;"></div>
+</ion-content>

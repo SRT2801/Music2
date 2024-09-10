@@ -35,3 +35,70 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+body {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1db954;
+  border-radius: 20px;
+}
+
+.play-button {
+  border-radius: 50%;
+  background-color: #1db954;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Estilos globales existentes */
+// ... (mantén los estilos existentes)
+
+/* Estilos responsive adicionales */
+:root {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+}
+
+.ion-page {
+  display: flex;
+  flex-direction: column;
+}
+
+ion-content {
+  --padding-top: calc(20px + var(--ion-safe-area-top));
+  --padding-bottom: calc(20px + var(--ion-safe-area-bottom));
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+@media (min-width: 768px) {
+  ion-content {
+    --padding-start: 10%;
+    --padding-end: 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  ion-content {
+    --padding-start: 20%;
+    --padding-end: 20%;
+  }
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buscar Canciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/playlist">
+        Ver Playlist
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="title">Buscar</h1>
+  <ion-searchbar [(ngModel)]="query" (ionInput)="searchSongs()" placeholder="¿Qué quieres escuchar?" class="custom-searchbar"></ion-searchbar>
+
+  <div class="results-container">
+    <div *ngFor="let song of searchResults" class="song-item">
+      <img [src]="song.snippet.thumbnails.medium.url" alt="{{ song.snippet.title }}" class="song-thumbnail">
+      <div class="song-info">
+        <h2 class="song-title">{{ song.snippet.title }}</h2>
+        <p class="song-artist">{{ song.snippet.channelTitle }}</p>
+      </div>
+      <div class="song-actions">
+        <ion-button (click)="playSong(song)" fill="clear" class="action-button play-button">
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+        <ion-button (click)="addToPlaylist(song)" fill="clear" class="action-button add-button">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/playlist">
+        Ver Playlist
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+
