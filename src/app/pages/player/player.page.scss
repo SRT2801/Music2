@@ -6,6 +6,8 @@
   height: 100%;
   color: white;
   padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .song-info {
@@ -97,24 +99,28 @@
     width: 90%;
   }
 
-  .song-details h2 {
-    font-size: 16px;
+  .song-details {
+    h2 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 12px;
+    }
   }
 
-  .song-details p {
-    font-size: 12px;
-  }
+  .player-controls {
+    ion-button {
+      --padding-start: 5px;
+      --padding-end: 5px;
 
-  .player-controls ion-button {
-    --padding-start: 5px;
-    --padding-end: 5px;
+      &.play-pause-btn {
+        --padding-start: 15px;
+        --padding-end: 15px;
 
-    &.play-pause-btn {
-      --padding-start: 15px;
-      --padding-end: 15px;
-
-      ion-icon {
-        font-size: 20px;
+        ion-icon {
+          font-size: 22px;
+        }
       }
     }
   }
@@ -122,7 +128,6 @@
 
 @media (min-width: 768px) {
   .player-container {
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 40px;
   }
 }

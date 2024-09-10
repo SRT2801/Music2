@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class YoutubeService {
 
-  apiKey = 'AIzaSyCuzJO73ObVCUHFd4wmR-SgPgNS82Aa6Lg';  // Coloca aquí tu clave API de YouTube
+  apiKey = 'AIzaSyB5IeSi4T4VvwPUPxfwImXoP8QnZ32rrcM';  // Coloca aquí tu clave API de YouTube
 
   constructor(private http: HttpClient) { }
 
